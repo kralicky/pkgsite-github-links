@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "pkgsite-github-links",
+  "version": "1.0",
+  "description": "Rewrites links to Go standard library source code on pkg.go.dev to point to the github mirror instead of cs.opensource.google.",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://pkg.go.dev/*"
+      ],
+      "js": [
+        "redirect.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "<all_urls>"
+  ]
+}
